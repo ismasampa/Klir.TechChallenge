@@ -8,9 +8,10 @@ namespace Klir.TechChallenge.Tests
     class Data
     {
         [Fact]
-        public void List_Products_Repository()
+        public void Products_Repository()
         {
-            Assert.NotEmpty(products);
+            if( Assert.NotNull(products) )
+                if( Assert.NotEmpty(products) );
         }
         
     }
