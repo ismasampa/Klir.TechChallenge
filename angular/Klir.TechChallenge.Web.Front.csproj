@@ -4,4 +4,8 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\aspnet-core\Klir.TechChallenge.Infra.IoC\Klir.TechChallenge.Infra.IoC.csproj" />
+  </ItemGroup>
+
 </Project>
