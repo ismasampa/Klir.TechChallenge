@@ -7,7 +7,7 @@ namespace Klir.TechChallenge.Infra.Data.DataMock
     {
         public DataMock()
         {
-            Promotions = new List<Promotion>()
+            this.Promotions = new List<Promotion>()
             {
                 new Promotion( ){ Description = "Buy1Get1Free",
                  FinalValue = 20,
@@ -38,7 +38,7 @@ namespace Klir.TechChallenge.Infra.Data.DataMock
                 Type = Domain.Enum.PromotionType.QuantityXPrice
             });
 
-            Products = new List<Product>()
+            this.Products = new List<Product>()
             {
                 prodpromon1,
                 prodpromon2,
@@ -46,7 +46,7 @@ namespace Klir.TechChallenge.Infra.Data.DataMock
                 new Product(4, "Product D", 4)
             };
 
-            Cart = new Cart();
+            this.Cart = new Cart();
         }
 
         public List<Product> Products { get; private set; }

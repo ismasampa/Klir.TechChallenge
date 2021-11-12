@@ -34,11 +34,13 @@ namespace KlirTechChallenge.Web.Api
                                   builder =>
                                   {
                                       builder.WithOrigins("http://localhost:4200");
+                                      builder.AllowAnyMethod();
                                   });
             });
 
             DependencyContainer.RegisterServices(services);
 
+            services.AddMvc();
             services.AddControllers();
             services.AddSwaggerGen(c =>
             {

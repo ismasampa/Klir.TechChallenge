@@ -1,18 +1,24 @@
-﻿using Klir.TechChallenge.Domain.Entity.Interface;
+﻿using Klir.TechChallenge.Domain.Entity;
+using Klir.TechChallenge.Domain.Entity.Interface;
 using System.Collections.Generic;
 
 namespace Klir.TechChallenge.Domain.Repository.Interface
 {
     public interface IProductRepository
     {
-        IEnumerable<Entity.Product> GetProducts();
+        IEnumerable<Product> GetProducts();
 
-        Entity.Product GetProductById(int id);
+        Product GetProductById(int id);
 
-        IEnumerable<Entity.Product> GetProductByName(string name);
+        Product GetProductByName(string name);
+        
+        Promotion GetPromotionByName(string name);
 
-        Entity.Product SetPromotionToProduct(int productId, IPromotion promotion);
 
-        Entity.Product RemoveProductPromotion(int productId);
+
+        Product SetPromotionToProduct(int productId, string promotionName);
+
+        Product RemoveProductPromotion(int productId);
+        IEnumerable<Promotion> GetPromotions();
     }
 }

@@ -12,10 +12,12 @@ namespace Klir.TechChallenge.Infra.Data.Repository
 
         public ProductRepository(DataMock.IDataMock data) => _data = data;
 
-        public Product SetPromotionToProduct(int productId, IPromotion promotion)
+        public Product SetPromotionToProduct(int productId, string promotionName)
         {
             var product = GetProductById(productId);
+            var promotion = GetPromotionByName(promotionName);
             product.SetPromotion(promotion);
+
             return product;
         }
 
@@ -24,9 +26,18 @@ namespace Klir.TechChallenge.Infra.Data.Repository
             return _data.Products.FirstOrDefault(p => p.Id == id);
         }
 
-        public IEnumerable<Product> GetProductByName(string name)
+        public Product GetProductByName(string name)
         {
-            return _data.Products.Where(p => p.Name == name).ToList();
+            return _data.Products.Where(p => p.Name == name).FirstOrDefault();
+        }
+        public Promotion GetPromotionByName(string name)
+        {
+            return _data.Promotions.Where(p => p.Description == name).FirstOrDefault();
+        }
+
+        public IEnumerable<Promotion> GetPromotions()
+        {
+            return _data.Promotions.ToList();
         }
 
         public IEnumerable<Product> GetProducts()
