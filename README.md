@@ -1,5 +1,4 @@
 # KlirTechChallenge
-
 This project was generated with Angular 9 and Asp.Net Core based on instructions in [this file](/KlirTechChallenge.pdf)
 
 ## Requirements
